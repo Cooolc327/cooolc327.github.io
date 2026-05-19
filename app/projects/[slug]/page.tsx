@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { serialize } from "next-mdx-remote/serialize";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
+import { markdownToHtml } from "@/lib/mdx";
 import { MdxContent } from "@/components/MdxContent";
 import { GithubIcon } from "@/components/SocialIcons";
 
@@ -29,10 +29,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
-  const source = await serialize({
-    source: project.longDescription,
-    mdxOptions: { format: "md" },
-  });
+  const html = await markdownToHtml(project.longDescription);
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
@@ -76,7 +73,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       </div>
 
       <article className="mt-12">
-        <MdxContent source={source} />
+        <MdxContent html={html} />
       </article>
     </div>
   );

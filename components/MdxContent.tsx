@@ -1,12 +1,12 @@
-"use client";
-
-import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
-import { mdxComponents } from "./mdx-components";
-
 interface Props {
-  source: MDXRemoteSerializeResult;
+  html: string;
 }
 
-export function MdxContent({ source }: Props) {
-  return <MDXRemote {...source} components={mdxComponents} />;
+export function MdxContent({ html }: Props) {
+  return (
+    <div
+      className="prose dark:prose-invert max-w-none"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
 }

@@ -11,11 +11,15 @@
     "@mdx-js/mdx": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@next/mdx": "^16.2.6",
+    "@tailwindcss/typography": "^0.5.19",
     "lucide-react": "^1.14.0",
     "next": "16.2.6",
     "next-mdx-remote": "^6.0.0",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "remark-html": "^16.0.1",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
