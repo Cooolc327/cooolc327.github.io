@@ -4,8 +4,8 @@ import { profile } from "@/data/profile";
 import { GithubIcon, LinkedInIcon, TwitterIcon } from "@/components/SocialIcons";
 
 export const metadata: Metadata = {
-  title: "联系",
-  description: "与我取得联系",
+  title: "Contact",
+  description: "Get in touch with me",
 };
 
 export default function ContactPage() {
@@ -13,8 +13,8 @@ export default function ContactPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="text-3xl font-bold">联系我</h1>
-      <p className="mt-4 text-muted">欢迎技术交流与合作</p>
+      <h1 className="text-3xl font-bold">Contact Me</h1>
+      <p className="mt-4 text-muted">Let's connect — open to collaboration and tech discussions</p>
 
       <div className="mt-12 space-y-8">
         <div className="flex items-center gap-4">
@@ -36,7 +36,7 @@ export default function ContactPage() {
       </div>
 
       <div className="mt-12">
-        <h2 className="text-xl font-bold">社交媒体</h2>
+        <h2 className="text-xl font-bold">Social Media</h2>
         <div className="mt-6 flex items-center gap-6">
           {socials.github && (
             <a

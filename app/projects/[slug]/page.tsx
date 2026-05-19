@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
-  if (!project) return { title: "项目未找到" };
+  if (!project) return { title: "Project not found" };
   return {
     title: project.title,
     description: project.description,
@@ -55,7 +55,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90"
           >
-            在线演示
+            Live Demo
             <ArrowUpRight size={14} />
           </a>
         )}
@@ -67,7 +67,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             className="inline-flex items-center gap-1 rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-black/5 dark:hover:bg-white/5"
           >
             <GithubIcon className="h-[14px] w-[14px]" />
-            源代码
+            Source Code
           </a>
         )}
       </div>

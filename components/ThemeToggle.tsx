@@ -31,7 +31,7 @@ export function ThemeToggle() {
     <button
       onClick={toggle}
       className="rounded-lg p-2 transition-colors hover:bg-black/5 dark:hover:bg-white/10"
-      aria-label="切换主题"
+      aria-label="Toggle theme"
     >
       {dark ? <Sun size={18} /> : <Moon size={18} />}
     </button>

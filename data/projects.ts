@@ -13,22 +13,22 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "haloop-ai-governance",
-    title: "HaLoop — AI 安全编程助手",
+    title: "HaLoop — Safe AI Coding Assistant",
     description:
-      "一个安全的人类管控 AI 编程助手，集成 VS Code 扩展和治理仪表盘，实现 AI 代码生成的风险评估与审批流程。",
+      "A safe, human-governed AI coding assistant with a VS Code extension and governance dashboard for risk assessment and approval workflows.",
     longDescription: `
-## 项目简介
+## Overview
 
-HaLoop 是一个在 CEEES Deep Learning Week 2026 Hackathon 中开发的项目，旨在解决 AI 编程助手的安全性问题。
+HaLoop is a project developed at the CEEES Deep Learning Week 2026 Hackathon, designed to address safety concerns with AI coding assistants.
 
-## 核心功能
+## Core Features
 
-- **VS Code 扩展插件**：嵌入开发者 IDE 工作流，自动收集上下文并请求 AI 生成代码方案
-- **风险门控系统**：在 AI 生成方案后，进行前端+后端双重风险评估，高风险方案需要人工审批
-- **治理仪表盘**：提供审批管理、策略配置、事件模式、审计日志等完整管控功能
-- **死者开关**：记录所有 AI 修改的文件清单，支持一键回滚
+- **VS Code Extension**: Embedded in the developer's IDE workflow, automatically collecting context and requesting AI-generated code plans
+- **Risk Gate System**: Dual risk evaluation (frontend + backend) after AI plan generation — high-risk plans require human approval
+- **Governance Dashboard**: Full governance controls including approval management, policy configuration, incident mode, and audit logs
+- **Dead Man's Switch**: Records all AI-modified files in a session manifest, enabling one-click rollback
 
-## 技术栈
+## Tech Stack
 
 Next.js, TypeScript, VS Code Extension API, Prisma, PostgreSQL, Redis, BullMQ, OpenAI API, Docker
     `,
@@ -38,22 +38,22 @@ Next.js, TypeScript, VS Code Extension API, Prisma, PostgreSQL, Redis, BullMQ, O
   },
   {
     slug: "ai-routing-playground",
-    title: "AI 路由器实战工作坊",
+    title: "AI Routing Playground Workshop",
     description:
-      "基于 Ollama 本地 LLM 的混合专家（MoE）路由器实践，通过分类器将用户输入自动路由到最佳 AI 角色。",
+      "A hands-on MoE (Mixture of Experts) router practice using local LLMs via Ollama, automatically routing user input to the best AI persona via a classifier.",
     longDescription: `
-## 项目简介
+## Overview
 
-一个实践性的 AI 路由系统教程，通过构建小型混合专家模型（MoE）来理解 AI 路由机制。
+A practical AI routing system tutorial that builds a small Mixture-of-Experts (MoE) model to understand AI routing mechanisms.
 
-## 核心功能
+## Core Features
 
-- 使用 Ollama 在本地运行多种 LLM（gemma2, phi, deepseek-r1 等）
-- 训练 TF-IDF + MLP 分类器实现用户意图自动路由
-- 三种专家角色：辩手、段子手、教师
-- Gradio 交互式 Web 界面
+- Run multiple LLMs locally via Ollama (gemma2, phi, deepseek-r1, etc.)
+- Train a TF-IDF + MLP classifier to automatically route user intent
+- Three expert personas: Debater, Jokester, Teacher
+- Interactive Gradio web interface
 
-## 技术栈
+## Tech Stack
 
 Python, Ollama, scikit-learn, Gradio, Pandas
     `,
@@ -63,29 +63,29 @@ Python, Ollama, scikit-learn, Gradio, Pandas
   },
   {
     slug: "personal-website",
-    title: "个人网站",
+    title: "Personal Website",
     description:
-      "使用 Next.js + Tailwind CSS 构建的个人主页，支持深色模式、MDX 博客和项目展示。",
+      "A personal website built with Next.js + Tailwind CSS, featuring dark mode, MDX-powered blog, and project showcase.",
     longDescription: `
-## 项目简介
+## Overview
 
-一个现代化、响应式的个人网站，用于展示我的项目作品和技术博客。
+A modern, responsive personal website to showcase my projects and technical blog posts.
 
-## 核心功能
+## Core Features
 
-- Next.js 15 App Router 架构
-- Tailwind CSS 实现深色/浅色模式
-- MDX 驱动的博客系统
-- 项目作品集展示
-- 完全响应式设计
+- Next.js 15 App Router architecture
+- Tailwind CSS with dark/light mode
+- MDX-driven blog system
+- Project portfolio showcase
+- Fully responsive design
 
-## 技术栈
+## Tech Stack
 
 Next.js, TypeScript, Tailwind CSS, MDX, Lucide Icons
     `,
     tags: ["TypeScript", "Next.js", "Tailwind CSS", "MDX"],
     sourceUrl: "https://github.com",
-    demoUrl: "https://example.com",
+    demoUrl: "https://cooolc327.github.io",
     featured: true,
   },
 ];

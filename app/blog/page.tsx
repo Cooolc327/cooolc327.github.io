@@ -3,8 +3,8 @@ import { BlogCard } from "@/components/BlogCard";
 import { getAllPosts, getAllTags } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "博客",
-  description: "技术文章和项目复盘",
+  title: "Blog",
+  description: "Technical articles and project retrospectives",
 };
 
 export default function BlogPage() {
@@ -13,8 +13,8 @@ export default function BlogPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
-      <h1 className="text-3xl font-bold">博客</h1>
-      <p className="mt-4 text-muted">技术文章和项目复盘</p>
+      <h1 className="text-3xl font-bold">Blog</h1>
+      <p className="mt-4 text-muted">Technical articles and project retrospectives</p>
 
       {tags.length > 0 && (
         <div className="mt-8 flex flex-wrap gap-2">
@@ -37,7 +37,7 @@ export default function BlogPage() {
       </div>
 
       {posts.length === 0 && (
-        <p className="mt-10 text-center text-muted">还没有文章。</p>
+        <p className="mt-10 text-center text-muted">No posts yet.</p>
       )}
     </div>
   );

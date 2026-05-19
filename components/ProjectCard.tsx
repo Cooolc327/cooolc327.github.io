@@ -25,7 +25,7 @@ export function ProjectCard({ project }: { project: Project }) {
           href={`/projects/${project.slug}`}
           className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-accent"
         >
-          详情
+          Details
           <ArrowUpRight size={14} />
         </Link>
         {project.sourceUrl && (
@@ -36,7 +36,7 @@ export function ProjectCard({ project }: { project: Project }) {
             className="inline-flex items-center gap-1 text-sm text-muted transition-colors hover:text-foreground"
           >
             <GithubIcon className="h-[14px] w-[14px]" />
-            源码
+            Source
           </a>
         )}
       </div>

@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Edward — 个人主页",
+    default: "Edward — Personal Website",
     template: "%s | Edward",
   },
-  description: "全栈开发者，热衷于构建有价值的软件产品",
+  description: "Full-stack developer building valuable software products",
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="zh-CN"
+      lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       suppressHydrationWarning
     >

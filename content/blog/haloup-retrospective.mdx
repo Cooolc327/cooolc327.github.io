@@ -1,46 +1,46 @@
 ---
-title: HaLoop 项目复盘 — AI 安全编程助手的诞生
+title: HaLoop Retrospective — The Birth of a Safe AI Coding Assistant
 date: 2026-05-08
-excerpt: 回顾 CEEES Deep Learning Week 2026 Hackathon 中 HaLoop 项目的设计思路、技术挑战和经验教训。
-tags: [Hackathon, AI, 安全, VS Code Extension]
+excerpt: A look back at the design decisions, technical challenges, and lessons learned from the HaLoop project at CEEES Deep Learning Week 2026 Hackathon.
+tags: [Hackathon, AI, Security, VS Code Extension]
 ---
 
-## 背景
+## Background
 
-在 2026 年 CEEES 深度学习周的黑客松中，我和团队开发了 **HaLoop**——一个安全的人类管控 AI 编程助手。项目的核心理念是：**AI 可以辅助编程，但关键决策必须由人类掌控**。
+At the 2026 CEEES Deep Learning Week Hackathon, my team and I developed **HaLoop** — a safe, human-governed AI coding assistant. The core philosophy was: **AI can assist with coding, but critical decisions must remain under human control**.
 
-## 问题定义
+## Problem Statement
 
-AI 编程助手（如 GitHub Copilot、Cursor 等）可以极大地提高开发效率，但它们也带来了安全隐患：
+AI coding assistants (like GitHub Copilot, Cursor, etc.) can dramatically increase development speed, but they also introduce safety risks:
 
-- 直接修改敏感路径（认证模块、数据库迁移、依赖文件）
-- 生成可能包含安全漏洞的代码
-- 缺乏问责机制——谁批准了 AI 的修改？
+- Directly modifying sensitive paths (auth modules, database migrations, dependency files)
+- Generating code that may contain security vulnerabilities
+- Lack of accountability — who approved the AI's changes?
 
-我们的解决方案是在 AI 和代码库之间加入一个**治理层**。
+Our solution was to insert a **governance layer** between the AI and the codebase.
 
-## 技术架构
+## Technical Architecture
 
-我们设计了一个三层架构：
+We designed a three-layer architecture:
 
-1. **IDE 层**：VS Code 扩展，集成在开发者日常工作流中
-2. **治理层**：Next.js 仪表盘，提供审批、策略、审计功能
-3. **持久层**：SQLite（Demo）/ PostgreSQL（生产）
+1. **IDE Layer**: VS Code extension, integrated into the developer's daily workflow
+2. **Governance Layer**: Next.js dashboard for approvals, policy, and audit
+3. **Persistence Layer**: SQLite (Demo) / PostgreSQL (Production)
 
-### 关键设计决策
+### Key Design Decisions
 
-**双重风险评估**：我们在后端（AI 生成方案时）和前端（方案返回后）各做一次风险评估，取两者最高值作为最终风险等级。这避免了单点误判。
+**Dual Risk Evaluation**: We perform risk evaluations on both the backend (during AI plan generation) and the frontend (after plan returns), taking the maximum score as the final risk level. This prevents single-point misclassification.
 
-**SSE + 轮询双通道**：审批决策的传播同时使用 Server-Sent Events 和 HTTP 轮询，确保在网络不稳定的情况下也能及时收到决策。
+**SSE + Polling Dual Channel**: Approval decisions are delivered via both Server-Sent Events and HTTP polling, ensuring timely decision delivery even under unstable network conditions.
 
-**死者开关**：所有 AI 修改的文件都被记录在 Session Manifest 中，出了问题可以一键回滚。
+**Dead Man's Switch**: All AI-modified files are recorded in a Session Manifest, enabling one-click rollback when things go wrong.
 
-## 经验教训
+## Lessons Learned
 
-1. **先设计合约再写实现**：API 契约（请求/响应格式）应该是最先确定的，它指导了前后端的并行开发
-2. **Demo 模式很关键**：评委需要在没有完整基础设施的情况下运行项目，SQLite + JSON 的 Demo 模式让项目开箱即用
-3. **产品思维**：技术好只是基础，如何让评委快速理解你的价值主张同样重要
+1. **Design the contract before implementation**: API contracts (request/response formats) should be established first — they guide parallel frontend and backend development
+2. **Demo mode is critical**: Judges needed to run the project without full infrastructure. The SQLite + JSON demo mode made the project work out of the box
+3. **Product thinking**: Technical excellence is just the foundation — helping judges quickly understand your value proposition is equally important
 
-## 结语
+## Closing Thoughts
 
-Hackathon 不仅仅是一场比赛，更是一次快速学习和验证想法的机会。如果你有想法，就去实现它！
+A hackathon is not just a competition — it's an opportunity to rapidly learn and validate ideas. If you have an idea, go build it!

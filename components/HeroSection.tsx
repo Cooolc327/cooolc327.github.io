@@ -14,14 +14,14 @@ export function HeroSection() {
           href="/projects"
           className="inline-flex items-center gap-2 rounded-lg bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
         >
-          查看项目
+          View Projects
           <ArrowRight size={16} />
         </Link>
         <Link
           href="/about"
           className="inline-flex items-center gap-2 rounded-lg border px-6 py-3 text-sm font-medium transition-colors hover:bg-black/5 dark:hover:bg-white/5"
         >
-          了解更多
+          Learn More
         </Link>
       </div>
     </section>

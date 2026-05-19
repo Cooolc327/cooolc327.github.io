@@ -7,11 +7,11 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
-  { href: "/", label: "首页" },
-  { href: "/about", label: "关于我" },
-  { href: "/projects", label: "项目" },
-  { href: "/blog", label: "博客" },
-  { href: "/contact", label: "联系" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -47,7 +47,7 @@ export function Navbar() {
           <button
             onClick={() => setOpen(!open)}
             className="rounded-lg p-2 transition-colors hover:bg-black/5 dark:hover:bg-white/10"
-            aria-label="菜单"
+            aria-label="Menu"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>

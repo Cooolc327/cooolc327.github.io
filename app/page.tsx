@@ -17,12 +17,12 @@ export default function HomePage() {
 
       <section className="pb-16">
         <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-2xl font-bold">精选项目</h2>
+          <h2 className="text-2xl font-bold">Featured Projects</h2>
           <Link
             href="/projects"
             className="text-sm font-medium text-muted transition-colors hover:text-accent"
           >
-            查看全部 &rarr;
+            View all &rarr;
           </Link>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -34,12 +34,12 @@ export default function HomePage() {
 
       <section className="pb-16">
         <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-2xl font-bold">最新文章</h2>
+          <h2 className="text-2xl font-bold">Latest Posts</h2>
           <Link
             href="/blog"
             className="text-sm font-medium text-muted transition-colors hover:text-accent"
           >
-            查看全部 &rarr;
+            View all &rarr;
           </Link>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -50,7 +50,7 @@ export default function HomePage() {
       </section>
 
       <section className="pb-20">
-        <h2 className="mb-8 text-2xl font-bold">技能栈</h2>
+        <h2 className="mb-8 text-2xl font-bold">Skills</h2>
         <div className="flex flex-wrap gap-3">
           {profile.skills.map((skill) => (
             <SkillTag key={skill} name={skill} />

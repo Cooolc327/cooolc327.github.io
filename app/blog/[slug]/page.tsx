@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) return { title: "文章未找到" };
+  if (!post) return { title: "Post not found" };
   return {
     title: post.frontmatter.title,
     description: post.frontmatter.excerpt,
@@ -38,7 +38,7 @@ export default async function BlogPostPage({ params }: Props) {
         className="inline-flex items-center gap-1 text-sm text-muted transition-colors hover:text-foreground"
       >
         <ArrowLeft size={14} />
-        返回博客
+        Back to blog
       </Link>
 
       <article className="mt-8">

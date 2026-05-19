@@ -3,15 +3,15 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "项目",
-  description: "我参与和开发的项目作品集",
+  title: "Projects",
+  description: "My project portfolio",
 };
 
 export default function ProjectsPage() {
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
-      <h1 className="text-3xl font-bold">项目</h1>
-      <p className="mt-4 text-muted">我参与和开发的项目作品集</p>
+      <h1 className="text-3xl font-bold">Projects</h1>
+      <p className="mt-4 text-muted">A selection of projects I've worked on</p>
 
       <div className="mt-10 grid gap-6 sm:grid-cols-2">
         {projects.map((project) => (
