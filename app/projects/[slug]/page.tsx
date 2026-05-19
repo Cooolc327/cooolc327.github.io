@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { serialize } from "next-mdx-remote/serialize";
 import { ArrowUpRight } from "lucide-react";
-import { GithubIcon } from "@/components/SocialIcons";
 import { projects } from "@/data/projects";
-import { mdxComponents } from "@/components/mdx-components";
+import { MdxContent } from "@/components/MdxContent";
+import { GithubIcon } from "@/components/SocialIcons";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -28,6 +28,11 @@ export default async function ProjectDetailPage({ params }: Props) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
+
+  const source = await serialize({
+    source: project.longDescription,
+    mdxOptions: { format: "md" },
+  });
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
@@ -70,8 +75,8 @@ export default async function ProjectDetailPage({ params }: Props) {
         )}
       </div>
 
-      <article className="prose-custom mt-12">
-        <MDXRemote source={project.longDescription} components={mdxComponents} />
+      <article className="mt-12">
+        <MdxContent source={source} />
       </article>
     </div>
   );

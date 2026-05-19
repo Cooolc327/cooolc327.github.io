@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { serialize } from "next-mdx-remote/serialize";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { getPostBySlug, getAllPosts } from "@/lib/blog";
-import { mdxComponents } from "@/components/mdx-components";
+import { MdxContent } from "@/components/MdxContent";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -28,6 +28,11 @@ export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+
+  const source = await serialize({
+    source: post.rawContent,
+    mdxOptions: { format: "md" },
+  });
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
@@ -53,7 +58,7 @@ export default async function BlogPostPage({ params }: Props) {
           ))}
         </div>
         <div className="mt-10 leading-relaxed">
-          <MDXRemote source={post.rawContent} components={mdxComponents} />
+          <MdxContent source={source} />
         </div>
       </article>
     </div>
