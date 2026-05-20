@@ -1,73 +1,84 @@
 export interface Profile {
   name: string;
+  photo: string;
   tagline: string;
-  bio: string[];
+  affiliation: string;
   email: string;
+  emailObfuscated: string;
   location: string;
   socials: {
+    scholar?: string;
     github?: string;
-    linkedin?: string;
     twitter?: string;
+    linkedin?: string;
   };
-  skills: string[];
-  experience: {
-    title: string;
-    company: string;
+  news: {
+    date: string;
+    text: string;
+    link?: string;
+  }[];
+  education: {
+    school: string;
+    degree: string;
     period: string;
-    description: string;
+  }[];
+  honors: string[];
+  miscellanea: {
+    category: string;
+    icon: string;
+    items: string[];
   }[];
 }
 
 export const profile: Profile = {
-  name: "Edward",
+  name: "Edward Chen",
+  photo: "/images/profile.jpg",
   tagline: "Building valuable software products",
-  bio: [
-    "I'm a full-stack developer passionate about turning complex technical problems into clean, elegant solutions.",
-    "With years of experience in web development and AI applications, I specialize in React, Next.js, and Python. Currently exploring the intersection of deep learning and software engineering.",
-    "Outside of work, I enjoy participating in hackathons, writing technical blog posts, and learning and sharing in the open-source community.",
-  ],
+  affiliation: "Independent Developer / Student",
   email: "edward@example.com",
+  emailObfuscated: "edward [at] example.com",
   location: "China",
   socials: {
+    scholar: "https://scholar.google.com",
     github: "https://github.com",
-    linkedin: "https://linkedin.com",
     twitter: "https://twitter.com",
+    linkedin: "https://linkedin.com",
   },
-  skills: [
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-    "Node.js",
-    "Python",
-    "FastAPI",
-    "PostgreSQL",
-    "Docker",
-    "Git",
-    "VS Code Extension",
-    "OpenAI API",
+  news: [
+    {
+      date: "05/2026",
+      text: "Launched personal academic website built with Next.js and Tailwind CSS.",
+    },
+    {
+      date: "03/2026",
+      text: "HaLoop project named Track 1 Finalist at CEEES Deep Learning Week 2026 Hackathon — top rated for end-to-end workflow and human oversight.",
+    },
+    {
+      date: "02/2026",
+      text: "Released AI Routing Playground — a hands-on Mixture-of-Experts workshop using local LLMs via Ollama.",
+    },
   ],
-  experience: [
+  education: [
     {
-      title: "Full-Stack Developer",
-      company: "Tech Company / Personal Projects",
+      school: "University",
+      degree: "B.S. in Computer Science",
       period: "2023 – Present",
-      description:
-        "Responsible for full-stack web application development, building frontends with Next.js + TypeScript and backend services with Python FastAPI. Engaged in deep learning projects, exploring the intersection of AI and software engineering.",
+    },
+  ],
+  honors: [
+    "CEEES Deep Learning Week Hackathon 2026 — Track 1 Finalist",
+    "Top performer in programming competitions and open-source contributions",
+  ],
+  miscellanea: [
+    {
+      category: "Interests",
+      icon: "💻",
+      items: ["Open-source development", "Hackathons", "Technical writing"],
     },
     {
-      title: "Deep Learning Week Hackathon Participant",
-      company: "CEEES Deep Learning Week 2026",
-      period: "2026",
-      description:
-        "Designed and implemented HaLoop — a safe, human-governed AI coding assistant featuring a VS Code extension and governance dashboard, receiving high praise from judges.",
-    },
-    {
-      title: "Computer Science Student",
-      company: "University",
-      period: "University period",
-      description:
-        "Systematically studied computer science fundamentals including data structures & algorithms, operating systems, databases, and software engineering. Actively participated in programming competitions and open-source projects.",
+      category: "Hobbies",
+      icon: "🎹",
+      items: ["Reading", "Fitness", "Exploring new technologies"],
     },
   ],
 };

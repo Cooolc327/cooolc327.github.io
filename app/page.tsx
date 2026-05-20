@@ -1,59 +1,79 @@
 import { HeroSection } from "@/components/HeroSection";
-import { ProjectCard } from "@/components/ProjectCard";
-import { BlogCard } from "@/components/BlogCard";
-import { SkillTag } from "@/components/SkillTag";
-import { projects } from "@/data/projects";
+import { PublicationCard } from "@/components/PublicationCard";
 import { profile } from "@/data/profile";
-import { getAllPosts } from "@/lib/blog";
-import Link from "next/link";
+import { projects } from "@/data/projects";
 
 export default function HomePage() {
-  const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
-  const latestPosts = getAllPosts().slice(0, 3);
-
   return (
-    <div className="mx-auto max-w-4xl px-6">
+    <div className="mx-auto max-w-3xl space-y-14 px-6 py-10">
       <HeroSection />
 
-      <section className="pb-16">
-        <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-2xl font-bold">Featured Projects</h2>
-          <Link
-            href="/projects"
-            className="text-sm font-medium text-muted transition-colors hover:text-accent"
-          >
-            View all &rarr;
-          </Link>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
+      {/* News */}
+      <section>
+        <h2 className="mb-4 text-lg font-bold">News</h2>
+        <ul className="space-y-2">
+          {profile.news.map((item, i) => (
+            <li key={i} className="flex gap-2 text-sm">
+              <span className="shrink-0 font-medium text-accent">[{item.date}]</span>
+              <span className="text-muted">
+                {item.text}
+                {item.link && (
+                  <a href={item.link} className="ml-1 text-accent hover:underline">
+                    [link]
+                  </a>
+                )}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Publications */}
+      <section>
+        <h2 className="mb-5 text-lg font-bold">Publications & Projects</h2>
+        <div className="space-y-6">
+          {projects.map((project) => (
+            <PublicationCard key={project.slug} project={project} />
           ))}
         </div>
       </section>
 
-      <section className="pb-16">
-        <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-2xl font-bold">Latest Posts</h2>
-          <Link
-            href="/blog"
-            className="text-sm font-medium text-muted transition-colors hover:text-accent"
-          >
-            View all &rarr;
-          </Link>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {latestPosts.map((post) => (
-            <BlogCard key={post.slug} post={post} />
+      {/* Education */}
+      <section>
+        <h2 className="mb-4 text-lg font-bold">Education</h2>
+        <div className="space-y-4">
+          {profile.education.map((edu, i) => (
+            <div key={i} className="flex justify-between text-sm">
+              <div>
+                <span className="font-semibold">{edu.school}</span>
+                <span className="ml-2 text-muted">{edu.degree}</span>
+              </div>
+              <span className="shrink-0 text-muted">{edu.period}</span>
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="pb-20">
-        <h2 className="mb-8 text-2xl font-bold">Skills</h2>
-        <div className="flex flex-wrap gap-3">
-          {profile.skills.map((skill) => (
-            <SkillTag key={skill} name={skill} />
+      {/* Honors & Awards */}
+      <section>
+        <h2 className="mb-4 text-lg font-bold">Honors & Awards</h2>
+        <ul className="list-disc space-y-1 pl-5 text-sm text-muted">
+          {profile.honors.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Miscellanea */}
+      <section>
+        <h2 className="mb-4 text-lg font-bold">Miscellanea</h2>
+        <div className="space-y-3 text-sm text-muted">
+          {profile.miscellanea.map((cat, i) => (
+            <p key={i}>
+              <span className="mr-1">{cat.icon}</span>
+              <span className="font-medium text-foreground">{cat.category}:</span>{" "}
+              {cat.items.join(", ")}
+            </p>
           ))}
         </div>
       </section>

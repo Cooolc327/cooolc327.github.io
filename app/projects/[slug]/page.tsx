@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 import { projects } from "@/data/projects";
-import { markdownToHtml } from "@/lib/mdx";
-import { MdxContent } from "@/components/MdxContent";
-import { GithubIcon } from "@/components/SocialIcons";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -20,7 +18,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return { title: "Project not found" };
   return {
     title: project.title,
-    description: project.description,
   };
 }
 
@@ -29,51 +26,53 @@ export default async function ProjectDetailPage({ params }: Props) {
   const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
-  const html = await markdownToHtml(project.longDescription);
-
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="text-3xl font-bold">{project.title}</h1>
-      <p className="mt-4 leading-relaxed text-muted">{project.description}</p>
+    <div className="mx-auto max-w-2xl px-6 py-12">
+      <Link
+        href="/"
+        className="inline-flex items-center gap-1 text-sm text-muted transition-colors hover:text-foreground"
+      >
+        <ArrowLeft size={14} />
+        Back
+      </Link>
 
-      <div className="mt-4 flex flex-wrap gap-2">
-        {project.tags.map((tag) => (
-          <span
-            key={tag}
-            className="rounded-md bg-black/5 px-2 py-1 text-xs font-medium text-muted bg-black/5"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
+      <article className="mt-8">
+        <h1 className="text-2xl font-bold">{project.title}</h1>
+        <p className="mt-3 text-sm text-muted">{project.authors}</p>
+        <p className="mt-1 text-sm">
+          <span className="font-medium text-foreground">{project.venue}</span>
+        </p>
 
-      <div className="mt-6 flex items-center gap-4">
-        {project.demoUrl && (
-          <a
-            href={project.demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90"
-          >
-            Live Demo
-            <ArrowUpRight size={14} />
-          </a>
+        {project.award && (
+          <p className="mt-2 text-sm font-medium text-accent">{project.award}</p>
         )}
-        {project.sourceUrl && (
-          <a
-            href={project.sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-black/5 hover:bg-black/5"
-          >
-            <GithubIcon className="h-[14px] w-[14px]" />
-            Source Code
-          </a>
-        )}
-      </div>
 
-      <article className="mt-12">
-        <MdxContent html={html} />
+        <div className="mt-4 flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-md bg-black/5 px-2 py-1 text-xs font-medium text-muted"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {project.links.length > 0 && (
+          <div className="mt-6 flex flex-wrap gap-3">
+            {project.links.map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded border px-4 py-1.5 text-sm font-medium text-accent transition-colors hover:bg-accent/5"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )}
       </article>
     </div>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
@@ -9,17 +9,12 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   title: {
-    default: "Edward — Personal Website",
-    template: "%s | Edward",
+    default: "Edward Chen — Personal Website",
+    template: "%s | Edward Chen",
   },
-  description: "Full-stack developer building valuable software products",
+  description: "Edward Chen — Developer. Building valuable software products.",
 };
 
 export default function RootLayout({
@@ -30,7 +25,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={`${geistSans.variable} antialiased`}
     >
       <body className="flex min-h-screen flex-col">
         <Navbar />
