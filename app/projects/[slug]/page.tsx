@@ -40,7 +40,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-md bg-black/5 px-2 py-1 text-xs font-medium text-muted dark:bg-white/5"
+            className="rounded-md bg-black/5 px-2 py-1 text-xs font-medium text-muted bg-black/5"
           >
             {tag}
           </span>
@@ -64,7 +64,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             href={project.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-black/5 dark:hover:bg-white/5"
+            className="inline-flex items-center gap-1 rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-black/5 hover:bg-black/5"
           >
             <GithubIcon className="h-[14px] w-[14px]" />
             Source Code

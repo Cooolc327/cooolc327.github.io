@@ -5,7 +5,7 @@ interface Props {
 export function MdxContent({ html }: Props) {
   return (
     <div
-      className="prose dark:prose-invert max-w-none"
+      className="prose max-w-none"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );

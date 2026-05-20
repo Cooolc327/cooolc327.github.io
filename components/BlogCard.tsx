@@ -18,7 +18,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
         {post.frontmatter.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-md bg-black/5 px-2 py-1 text-xs font-medium text-muted dark:bg-white/5"
+            className="rounded-md bg-black/5 px-2 py-1 text-xs font-medium text-muted bg-black/5"
           >
             {tag}
           </span>

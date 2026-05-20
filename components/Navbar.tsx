@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { href: "/", label: "Home" },
@@ -19,7 +18,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur-sm">
       <nav className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
         <Link href="/" className="text-lg font-bold tracking-tight">
           Edward
@@ -32,21 +31,19 @@ export function Navbar() {
               href={link.href}
               className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                 pathname === link.href
-                  ? "bg-black/5 text-foreground dark:bg-white/10"
+                  ? "bg-black/5 text-foreground"
                   : "text-muted hover:text-foreground"
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <ThemeToggle />
         </div>
 
         <div className="flex items-center gap-1 sm:hidden">
-          <ThemeToggle />
           <button
             onClick={() => setOpen(!open)}
-            className="rounded-lg p-2 transition-colors hover:bg-black/5 dark:hover:bg-white/10"
+            className="rounded-lg p-2 transition-colors hover:bg-black/5"
             aria-label="Menu"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
@@ -63,7 +60,7 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                 pathname === link.href
-                  ? "bg-black/5 text-foreground dark:bg-white/10"
+                  ? "bg-black/5 text-foreground"
                   : "text-muted hover:text-foreground"
               }`}
             >

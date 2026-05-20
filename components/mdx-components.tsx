@@ -22,7 +22,7 @@ export const mdxComponents = {
   ),
   code: (props: React.HTMLAttributes<HTMLElement>) => (
     <code
-      className="rounded bg-black/5 px-1.5 py-0.5 text-sm font-mono dark:bg-white/10"
+      className="rounded bg-black/5 px-1.5 py-0.5 text-sm font-mono bg-black/5"
       {...props}
     />
   ),

@@ -19,7 +19,7 @@ export function HeroSection() {
         </Link>
         <Link
           href="/about"
-          className="inline-flex items-center gap-2 rounded-lg border px-6 py-3 text-sm font-medium transition-colors hover:bg-black/5 dark:hover:bg-white/5"
+          className="inline-flex items-center gap-2 rounded-lg border px-6 py-3 text-sm font-medium transition-colors hover:bg-black/5 hover:bg-black/5"
         >
           Learn More
         </Link>
