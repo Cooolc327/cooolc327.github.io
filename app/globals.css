@@ -35,6 +35,20 @@ body {
   font-family: var(--font-sans, system-ui, sans-serif);
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("/images/hero-bg.png") no-repeat center center / cover;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.dark body::after {
+  opacity: 0.12;
+}
+
 ::selection {
   background: var(--accent);
   color: #ffffff;
