@@ -1,5 +1,6 @@
-import { GraduationCap, Github, Linkedin } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { profile } from "@/data/profile";
+import { GithubIcon, LinkedInIcon, TwitterIcon } from "./SocialIcons";
 
 export function HeroSection() {
   const { socials } = profile;
@@ -41,7 +42,7 @@ export function HeroSection() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 transition-colors hover:text-accent"
             >
-              <Github size={15} />
+              <GithubIcon className="h-[15px] w-[15px]" />
               GitHub
             </a>
           )}
@@ -52,8 +53,19 @@ export function HeroSection() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 transition-colors hover:text-accent"
             >
-              <Linkedin size={15} />
+              <LinkedInIcon className="h-[15px] w-[15px]" />
               LinkedIn
+            </a>
+          )}
+          {socials.twitter && (
+            <a
+              href={socials.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 transition-colors hover:text-accent"
+            >
+              <TwitterIcon className="h-[15px] w-[15px]" />
+              Twitter
             </a>
           )}
         </div>
