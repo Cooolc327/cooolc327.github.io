@@ -11,6 +11,7 @@ export interface Profile {
     github?: string;
     twitter?: string;
     linkedin?: string;
+    zhihu?: string;
   };
   news: {
     date: string;
@@ -43,6 +44,7 @@ export const profile: Profile = {
     github: "https://github.com",
     twitter: "https://twitter.com",
     linkedin: "https://linkedin.com",
+    zhihu: "https://www.zhihu.com/people/tenacious-82-85",
   },
   news: [
     {

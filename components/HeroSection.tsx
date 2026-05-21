@@ -1,6 +1,6 @@
 import { GraduationCap } from "lucide-react";
 import { profile } from "@/data/profile";
-import { GithubIcon, LinkedInIcon, TwitterIcon } from "./SocialIcons";
+import { GithubIcon, LinkedInIcon, TwitterIcon, ZhihuIcon } from "./SocialIcons";
 
 export function HeroSection() {
   const { socials } = profile;
@@ -59,6 +59,17 @@ export function HeroSection() {
             >
               <TwitterIcon className="h-[15px] w-[15px]" />
               Twitter
+            </a>
+          )}
+          {socials.zhihu && (
+            <a
+              href={socials.zhihu}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 transition-colors hover:text-accent"
+            >
+              <ZhihuIcon className="h-[15px] w-[15px]" />
+              知乎
             </a>
           )}
         </div>

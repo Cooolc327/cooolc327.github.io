@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Mail, MapPin } from "lucide-react";
 import { profile } from "@/data/profile";
-import { GithubIcon, LinkedInIcon, TwitterIcon } from "@/components/SocialIcons";
+import { GithubIcon, LinkedInIcon, TwitterIcon, ZhihuIcon } from "@/components/SocialIcons";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -69,6 +69,17 @@ export default function ContactPage() {
             >
               <TwitterIcon className="h-[18px] w-[18px]" />
               Twitter
+            </a>
+          )}
+          {socials.zhihu && (
+            <a
+              href={socials.zhihu}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
+            >
+              <ZhihuIcon className="h-[18px] w-[18px]" />
+              知乎
             </a>
           )}
         </div>
