@@ -11,10 +11,10 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: {
-    default: "Edward Chen — Personal Website",
-    template: "%s | Edward Chen",
+    default: "YIN LICHEN — Personal Website",
+    template: "%s | YIN LICHEN",
   },
-  description: "Edward Chen — Developer. Building valuable software products.",
+  description: "YIN LICHEN — Building valuable software products.",
 };
 
 export default function RootLayout({

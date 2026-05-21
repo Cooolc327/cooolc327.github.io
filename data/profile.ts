@@ -32,12 +32,12 @@ export interface Profile {
 }
 
 export const profile: Profile = {
-  name: "Edward Chen",
+  name: "YIN LICHEN",
   photo: "/images/profile.jpg",
   tagline: "Building valuable software products",
-  affiliation: "Independent Developer / Student",
-  email: "edward@example.com",
-  emailObfuscated: "edward [at] example.com",
+  affiliation: "",
+  email: "YI0002EN@e.ntu.edu.sg",
+  emailObfuscated: "YI0002EN [at] e.ntu.edu.sg",
   location: "China",
   socials: {
     scholar: "https://scholar.google.com",

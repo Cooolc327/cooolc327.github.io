@@ -13,7 +13,6 @@ export function HeroSection() {
 
       <div className="flex-1">
         <h1 className="text-3xl font-bold tracking-tight">{profile.name}</h1>
-        <p className="mt-1 text-sm text-muted">{profile.affiliation}</p>
         <p className="mt-1 text-sm text-muted">{profile.emailObfuscated}</p>
 
         <div className="mt-3 flex items-center gap-4 text-sm text-muted">
