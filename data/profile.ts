@@ -66,7 +66,7 @@ export const profile: Profile = {
       school: "Nanyang Technological University",
       degree: "B.S. in Computer Science",
       period: "2025 – Present",
-      logo: "/images/ntu-logo.svg",
+      logo: "/images/ntu-logo.png",
     },
   ],
   honors: [
