@@ -43,12 +43,17 @@ export default function HomePage() {
         <h2 className="mb-4 text-lg font-bold">Education</h2>
         <div className="space-y-4">
           {profile.education.map((edu, i) => (
-            <div key={i} className="flex justify-between text-sm">
-              <div>
-                <span className="font-semibold">{edu.school}</span>
-                <span className="ml-2 text-muted">{edu.degree}</span>
+            <div key={i} className="flex items-center gap-3 text-sm">
+              {edu.logo && (
+                <img src={edu.logo} alt={edu.school} className="h-9 w-9 shrink-0 rounded" />
+              )}
+              <div className="flex flex-1 justify-between">
+                <div>
+                  <span className="font-semibold">{edu.school}</span>
+                  <span className="ml-2 text-muted">{edu.degree}</span>
+                </div>
+                <span className="shrink-0 text-muted">{edu.period}</span>
               </div>
-              <span className="shrink-0 text-muted">{edu.period}</span>
             </div>
           ))}
         </div>

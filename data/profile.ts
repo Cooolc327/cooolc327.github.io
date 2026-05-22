@@ -22,6 +22,7 @@ export interface Profile {
     school: string;
     degree: string;
     period: string;
+    logo?: string;
   }[];
   honors: string[];
   miscellanea: {
@@ -62,9 +63,10 @@ export const profile: Profile = {
   ],
   education: [
     {
-      school: "University",
+      school: "Nanyang Technological University",
       degree: "B.S. in Computer Science",
-      period: "2023 – Present",
+      period: "2025 – Present",
+      logo: "/images/ntu-logo.svg",
     },
   ],
   honors: [
