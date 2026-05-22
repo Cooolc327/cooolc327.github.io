@@ -7,10 +7,10 @@ export function PublicationCard({ project }: { project: Project }) {
         <img
           src={project.thumbnail}
           alt={project.title}
-          className="mt-1 h-16 w-16 shrink-0 rounded border object-cover"
+          className="mt-1 h-20 w-auto max-w-[140px] shrink-0 rounded border object-contain"
         />
       ) : (
-        <div className="mt-1 h-16 w-16 shrink-0 rounded border bg-zinc-100" />
+        <div className="mt-1 h-20 w-20 shrink-0 rounded border bg-zinc-100" />
       )}
 
       <div className="min-w-0 flex-1">
