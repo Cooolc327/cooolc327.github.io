@@ -7,8 +7,12 @@ export function HeroSection() {
 
   return (
     <section className="flex flex-col items-start gap-6 sm:flex-row sm:gap-8">
-      <div className="flex h-28 w-28 shrink-0 items-center justify-center overflow-hidden rounded-full bg-zinc-200 text-4xl font-semibold text-zinc-400 sm:h-32 sm:w-32">
-        {profile.name.charAt(0)}
+      <div className="h-28 w-28 shrink-0 overflow-hidden rounded-full sm:h-32 sm:w-32">
+        <img
+          src="/images/profile.jpg"
+          alt={profile.name}
+          className="h-full w-full object-cover"
+        />
       </div>
 
       <div className="flex-1">
