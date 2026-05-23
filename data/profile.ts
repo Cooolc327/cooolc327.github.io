@@ -49,16 +49,8 @@ export const profile: Profile = {
   },
   news: [
     {
-      date: "05/2026",
-      text: "Launched personal academic website built with Next.js and Tailwind CSS.",
-    },
-    {
       date: "03/2026",
       text: "HaLoop project named Track 1 Finalist at CEEES Deep Learning Week 2026 Hackathon — top rated for end-to-end workflow and human oversight.",
-    },
-    {
-      date: "02/2026",
-      text: "Released AI Routing Playground — a hands-on Mixture-of-Experts workshop using local LLMs via Ollama.",
     },
   ],
   education: [
