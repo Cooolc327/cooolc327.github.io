@@ -70,8 +70,7 @@ export const profile: Profile = {
     },
   ],
   honors: [
-    "CEEES Deep Learning Week Hackathon 2026 — Track 1 Finalist",
-    "Top performer in programming competitions and open-source contributions",
+    "2nd Place in OpenAI Track & Silver Award Winner at Deep Learning Week Hackathon 2026.",
   ],
   miscellanea: [
     {
