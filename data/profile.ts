@@ -81,7 +81,7 @@ export const profile: Profile = {
     {
       category: "Hobbies",
       icon: "🎹",
-      items: ["Reading", "Fitness", "Exploring new technologies"],
+      items: ["Badminton", "Guitar", "Travelling"],
     },
   ],
 };
