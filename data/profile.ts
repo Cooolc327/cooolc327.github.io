@@ -47,7 +47,7 @@ export interface Profile {
 export const profile: Profile = {
   name: "YIN LICHEN",
   photo: "/images/profile.jpg",
-  tagline: "Computer Science undergraduate exploring computer vision, AI safety, and robotics",
+  tagline: "Computer Science undergraduate exploring robotics and embodied AI",
   affiliation: "Nanyang Technological University, Singapore",
   email: "YI0002EN@e.ntu.edu.sg",
   emailObfuscated: "YI0002EN [at] e.ntu.edu.sg",
@@ -80,6 +80,7 @@ export const profile: Profile = {
       school: "The Chinese University of Hong Kong",
       degree: "Summer Exchange Programme",
       period: "Jun 2026 – Jul 2026",
+      logo: "/images/cuhk-logo.jpg",
       details: [
         "ENGG1910: Demystifying Artificial Intelligence (A)",
         "URSP2100: Urban Sustainability (A-)",

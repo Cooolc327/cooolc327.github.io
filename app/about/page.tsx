@@ -21,31 +21,42 @@ export default function AboutPage() {
       </p>
 
       <section className="mt-12">
-        <h2 className="text-lg font-bold">Research Experience</h2>
-        <div className="mt-5">
-          <Timeline items={profile.research} />
+        <h2 className="text-lg font-bold">Education</h2>
+        <div className="mt-4 space-y-4">
+          {profile.education.map((edu, i) => (
+            <div key={i} className="flex items-start gap-4 text-sm">
+              {edu.logo && (
+                <div className="flex h-10 w-28 shrink-0 items-center justify-center">
+                  <img
+                    src={edu.logo}
+                    alt={`${edu.school} logo`}
+                    className="max-h-10 w-full object-contain"
+                  />
+                </div>
+              )}
+              <div className="flex min-w-0 flex-1 flex-col gap-1 sm:flex-row sm:justify-between sm:gap-4">
+                <div className="min-w-0">
+                  <p>
+                    <span className="font-semibold">{edu.school}</span>
+                    <span className="ml-2 text-muted">{edu.degree}</span>
+                  </p>
+                  {edu.details?.map((detail) => (
+                    <p key={detail} className="mt-1 text-xs text-muted">
+                      {detail}
+                    </p>
+                  ))}
+                </div>
+                <span className="shrink-0 text-muted">{edu.period}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="mt-12">
-        <h2 className="text-lg font-bold">Education</h2>
-        <div className="mt-4 space-y-4">
-          {profile.education.map((edu, i) => (
-            <div key={i} className="flex flex-col gap-1 text-sm sm:flex-row sm:justify-between sm:gap-4">
-              <div className="min-w-0">
-                <p>
-                  <span className="font-semibold">{edu.school}</span>
-                  <span className="ml-2 text-muted">{edu.degree}</span>
-                </p>
-                {edu.details?.map((detail) => (
-                  <p key={detail} className="mt-1 text-xs text-muted">
-                    {detail}
-                  </p>
-                ))}
-              </div>
-              <span className="shrink-0 text-muted">{edu.period}</span>
-            </div>
-          ))}
+        <h2 className="text-lg font-bold">Research Experience</h2>
+        <div className="mt-5">
+          <Timeline items={profile.research} />
         </div>
       </section>
 

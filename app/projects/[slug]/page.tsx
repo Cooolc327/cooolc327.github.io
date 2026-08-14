@@ -49,6 +49,11 @@ export default async function ProjectDetailPage({ params }: Props) {
         {project.award && (
           <p className="mt-2 text-sm font-medium text-accent">{project.award}</p>
         )}
+        {project.outcome && (
+          <p className="mt-2 text-sm">
+            <span className="font-medium text-foreground">{project.outcome}</span>
+          </p>
+        )}
 
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tags.map((tag) => (

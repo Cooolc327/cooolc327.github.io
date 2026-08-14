@@ -30,22 +30,6 @@ export default function HomePage() {
         </ul>
       </section>
 
-      {/* Research */}
-      <section>
-        <h2 className="mb-5 text-lg font-bold">Research Experience</h2>
-        <Timeline items={profile.research} />
-      </section>
-
-      {/* Projects */}
-      <section>
-        <h2 className="mb-5 text-lg font-bold">Selected Projects</h2>
-        <div className="space-y-6">
-          {projects.map((project) => (
-            <PublicationCard key={project.slug} project={project} />
-          ))}
-        </div>
-      </section>
-
       {/* Education */}
       <section>
         <h2 className="mb-4 text-lg font-bold">Education</h2>
@@ -53,7 +37,13 @@ export default function HomePage() {
           {profile.education.map((edu, i) => (
             <div key={i} className="flex items-start gap-4 text-sm">
               {edu.logo && (
-                <img src={edu.logo} alt={edu.school} className="h-10 w-auto shrink-0 object-contain" />
+                <div className="flex h-10 w-28 shrink-0 items-center justify-center">
+                  <img
+                    src={edu.logo}
+                    alt={`${edu.school} logo`}
+                    className="max-h-10 w-full object-contain"
+                  />
+                </div>
               )}
               <div className="flex min-w-0 flex-1 flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                 <div className="min-w-0">
@@ -70,6 +60,22 @@ export default function HomePage() {
                 <span className="shrink-0 text-muted">{edu.period}</span>
               </div>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Research */}
+      <section>
+        <h2 className="mb-5 text-lg font-bold">Research Experience</h2>
+        <Timeline items={profile.research} />
+      </section>
+
+      {/* Projects */}
+      <section>
+        <h2 className="mb-5 text-lg font-bold">Selected Projects</h2>
+        <div className="space-y-6">
+          {projects.map((project) => (
+            <PublicationCard key={project.slug} project={project} />
           ))}
         </div>
       </section>

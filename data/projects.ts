@@ -11,6 +11,7 @@ export interface Project {
   venueShort?: string;
   period?: string;
   award?: string;
+  outcome?: string;
   tags: string[];
   thumbnail?: string;
   links: ProjectLink[];
@@ -40,8 +41,9 @@ export const projects: Project[] = [
     venue: "NLP assistant that classifies 12.8K LIAR claims into low, medium, and high misinformation-risk levels, comparing TF-IDF/logistic regression with BERT-base.",
     venueShort: "ENGG1910",
     period: "Jun 2026 – Jul 2026",
-    award: "BERT achieved 0.491 macro-F1 and 0.670 macro ROC-AUC on 1,283 test claims — a 7.0-point macro-F1 improvement over the baseline.",
+    outcome: "BERT achieved 0.491 macro-F1 and 0.670 macro ROC-AUC on 1,283 test claims — a 7.0-point macro-F1 improvement over the baseline.",
     tags: ["NLP", "BERT", "scikit-learn", "PyTorch"],
+    thumbnail: "/images/cuhk-logo.jpg",
     links: [
       { label: "Code", url: "https://github.com/DasbootU9607/ENGG1910-Group-Project" },
       { label: "Project Page", url: "https://dasbootu9607.github.io/ENGG1910-Group-Project/" },
@@ -56,6 +58,7 @@ export const projects: Project[] = [
     venueShort: "SC1003",
     period: "Oct 2025 – Nov 2025",
     tags: ["Team Allocation", "Fairness", "Data Processing"],
+    thumbnail: "/images/ntu-logo.png",
     links: [],
     featured: false,
   },

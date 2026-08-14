@@ -8,7 +8,7 @@ export function PublicationCard({ project }: { project: Project }) {
         <img
           src={project.thumbnail}
           alt={project.title}
-          className="mt-1 h-20 w-auto max-w-[140px] shrink-0 rounded border object-contain"
+          className="mt-1 h-20 w-28 shrink-0 rounded border bg-white p-2 object-contain"
         />
       ) : (
         <div className="mt-1 flex h-20 w-24 shrink-0 items-center justify-center rounded border bg-card px-2 text-center text-xs font-semibold text-muted">
@@ -31,6 +31,11 @@ export function PublicationCard({ project }: { project: Project }) {
         </p>
         {project.award && (
           <p className="mt-0.5 text-sm font-medium text-accent">{project.award}</p>
+        )}
+        {project.outcome && (
+          <p className="mt-1 text-sm">
+            <span className="font-medium text-foreground">{project.outcome}</span>
+          </p>
         )}
         {project.links.length > 0 && (
           <p className="mt-1 text-sm">
