@@ -14,7 +14,10 @@ export default function ContactPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
       <h1 className="text-3xl font-bold">Contact Me</h1>
-      <p className="mt-4 text-muted">Let's connect — open to collaboration and tech discussions</p>
+      <p className="mt-4 text-muted">
+        Let&apos;s connect — I&apos;m open to research collaborations and conversations about AI,
+        robotics, and software engineering.
+      </p>
 
       <div className="mt-12 space-y-8">
         <div className="flex items-center gap-4">

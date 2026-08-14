@@ -7,12 +7,15 @@ export function Navbar() {
         <Link href="/" className="text-lg font-bold tracking-tight">
           YIN LICHEN
         </Link>
-        <div className="flex items-center gap-4">
-          <Link href="/" className="text-sm text-muted hover:text-foreground">
-            Home
+        <div className="flex items-center gap-3 sm:gap-4">
+          <Link href="/about" className="text-xs text-muted hover:text-foreground sm:text-sm">
+            About
           </Link>
-          <Link href="/blog" className="text-sm text-muted hover:text-foreground">
-            Blog
+          <Link href="/projects" className="text-xs text-muted hover:text-foreground sm:text-sm">
+            Projects
+          </Link>
+          <Link href="/contact" className="text-xs text-muted hover:text-foreground sm:text-sm">
+            Contact
           </Link>
         </div>
       </nav>

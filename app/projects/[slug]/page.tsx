@@ -38,7 +38,10 @@ export default async function ProjectDetailPage({ params }: Props) {
 
       <article className="mt-8">
         <h1 className="text-2xl font-bold">{project.title}</h1>
-        <p className="mt-3 text-sm text-muted">{project.authors}</p>
+        <div className="mt-3 flex flex-col gap-1 text-sm text-muted sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+          <span>{project.authors}</span>
+          {project.period && <span className="shrink-0">{project.period}</span>}
+        </div>
         <p className="mt-1 text-sm">
           <span className="font-medium text-foreground">{project.venue}</span>
         </p>

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: "YIN LICHEN — Personal Website",
     template: "%s | YIN LICHEN",
   },
-  description: "YIN LICHEN — Building valuable software products.",
+  description: "YIN LICHEN — Computer Science undergraduate at NTU working across computer vision, AI safety, robotics, and software engineering.",
 };
 
 export default function RootLayout({

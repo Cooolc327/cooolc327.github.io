@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { profile } from "@/data/profile";
+import { SkillsGrid } from "@/components/SkillsGrid";
+import { Timeline } from "@/components/Timeline";
 
 export const metadata: Metadata = {
   title: "About",
@@ -11,23 +13,46 @@ export default function AboutPage() {
     <div className="mx-auto max-w-2xl px-6 py-12">
       <h1 className="text-2xl font-bold">About Me</h1>
       <p className="mt-4 leading-relaxed text-muted">
-        I&apos;m a developer passionate about building valuable software products.
-        Currently exploring the intersection of deep learning and software engineering.
-        Outside of work, I enjoy hackathons, technical writing, and open-source.
+        I&apos;m a Computer Science undergraduate at Nanyang Technological University
+        interested in computer vision, robot learning, AI safety, and software engineering.
+        My current research focuses on using SAM 2 to segment human hands and arms in robot
+        demonstration videos. I enjoy turning machine-learning ideas into practical software
+        through research, coursework, and hackathons.
       </p>
+
+      <section className="mt-12">
+        <h2 className="text-lg font-bold">Research Experience</h2>
+        <div className="mt-5">
+          <Timeline items={profile.research} />
+        </div>
+      </section>
 
       <section className="mt-12">
         <h2 className="text-lg font-bold">Education</h2>
         <div className="mt-4 space-y-4">
           {profile.education.map((edu, i) => (
-            <div key={i} className="flex justify-between text-sm">
-              <div>
-                <span className="font-semibold">{edu.school}</span>
-                <span className="ml-2 text-muted">{edu.degree}</span>
+            <div key={i} className="flex flex-col gap-1 text-sm sm:flex-row sm:justify-between sm:gap-4">
+              <div className="min-w-0">
+                <p>
+                  <span className="font-semibold">{edu.school}</span>
+                  <span className="ml-2 text-muted">{edu.degree}</span>
+                </p>
+                {edu.details?.map((detail) => (
+                  <p key={detail} className="mt-1 text-xs text-muted">
+                    {detail}
+                  </p>
+                ))}
               </div>
               <span className="shrink-0 text-muted">{edu.period}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-lg font-bold">Skills</h2>
+        <div className="mt-4">
+          <SkillsGrid groups={profile.skills} />
         </div>
       </section>
 

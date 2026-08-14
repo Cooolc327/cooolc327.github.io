@@ -5,7 +5,8 @@ export function Timeline({
     title: string;
     company: string;
     period: string;
-    description: string;
+    description?: string;
+    highlights?: string[];
   }[];
 }) {
   return (
@@ -16,9 +17,18 @@ export function Timeline({
           <span className="text-xs font-medium text-accent">{item.period}</span>
           <h3 className="mt-1 font-semibold">{item.title}</h3>
           <p className="text-sm text-muted">{item.company}</p>
-          <p className="mt-2 text-sm leading-relaxed text-muted">
-            {item.description}
-          </p>
+          {item.description && (
+            <p className="mt-2 text-sm leading-relaxed text-muted">
+              {item.description}
+            </p>
+          )}
+          {item.highlights && (
+            <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted">
+              {item.highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
+          )}
         </div>
       ))}
     </div>

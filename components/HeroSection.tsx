@@ -9,7 +9,7 @@ export function HeroSection() {
     <section className="flex flex-col items-start gap-6 sm:flex-row sm:gap-8">
       <div className="h-28 w-28 shrink-0 overflow-hidden rounded-full sm:h-32 sm:w-32">
         <img
-          src="/images/profile.jpg"
+          src={profile.photo}
           alt={profile.name}
           className="h-full w-full object-cover"
         />
@@ -17,6 +17,8 @@ export function HeroSection() {
 
       <div className="flex-1">
         <h1 className="text-3xl font-bold tracking-tight">{profile.name}</h1>
+        <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">{profile.tagline}</p>
+        <p className="mt-1 text-sm font-medium">{profile.affiliation}</p>
         <p className="mt-1 text-sm text-muted">{profile.emailObfuscated}</p>
 
         <div className="mt-3 flex items-center gap-4 text-sm text-muted">

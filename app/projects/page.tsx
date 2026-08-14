@@ -4,13 +4,13 @@ import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "My publications and projects",
+  description: "Selected research, machine learning, and software projects",
 };
 
 export default function ProjectsPage() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-12">
-      <h1 className="text-2xl font-bold">Publications & Projects</h1>
+      <h1 className="text-2xl font-bold">Selected Projects</h1>
       <div className="mt-8 space-y-6">
         {projects.map((project) => (
           <PublicationCard key={project.slug} project={project} />

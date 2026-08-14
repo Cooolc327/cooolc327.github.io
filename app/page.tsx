@@ -2,6 +2,8 @@ import { HeroSection } from "@/components/HeroSection";
 import { PublicationCard } from "@/components/PublicationCard";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
+import { SkillsGrid } from "@/components/SkillsGrid";
+import { Timeline } from "@/components/Timeline";
 
 export default function HomePage() {
   return (
@@ -28,9 +30,15 @@ export default function HomePage() {
         </ul>
       </section>
 
-      {/* Publications */}
+      {/* Research */}
       <section>
-        <h2 className="mb-5 text-lg font-bold">Publications & Projects</h2>
+        <h2 className="mb-5 text-lg font-bold">Research Experience</h2>
+        <Timeline items={profile.research} />
+      </section>
+
+      {/* Projects */}
+      <section>
+        <h2 className="mb-5 text-lg font-bold">Selected Projects</h2>
         <div className="space-y-6">
           {projects.map((project) => (
             <PublicationCard key={project.slug} project={project} />
@@ -43,16 +51,23 @@ export default function HomePage() {
         <h2 className="mb-4 text-lg font-bold">Education</h2>
         <div className="space-y-4">
           {profile.education.map((edu, i) => (
-            <div key={i} className="flex items-center gap-4 text-sm">
+            <div key={i} className="flex items-start gap-4 text-sm">
               {edu.logo && (
                 <img src={edu.logo} alt={edu.school} className="h-10 w-auto shrink-0 object-contain" />
               )}
-              <div className="flex flex-1 items-baseline justify-between">
+              <div className="flex min-w-0 flex-1 flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                 <div className="min-w-0">
-                  <span className="font-semibold">{edu.school}</span>
-                  <span className="ml-2 text-muted">{edu.degree}</span>
+                  <p>
+                    <span className="font-semibold">{edu.school}</span>
+                    <span className="ml-2 text-muted">{edu.degree}</span>
+                  </p>
+                  {edu.details?.map((detail) => (
+                    <p key={detail} className="mt-1 text-xs text-muted">
+                      {detail}
+                    </p>
+                  ))}
                 </div>
-                <span className="ml-4 shrink-0 text-muted">{edu.period}</span>
+                <span className="shrink-0 text-muted">{edu.period}</span>
               </div>
             </div>
           ))}
@@ -67,6 +82,12 @@ export default function HomePage() {
             <li key={i}>{item}</li>
           ))}
         </ul>
+      </section>
+
+      {/* Skills */}
+      <section>
+        <h2 className="mb-4 text-lg font-bold">Skills</h2>
+        <SkillsGrid groups={profile.skills} />
       </section>
 
       {/* Miscellanea */}
