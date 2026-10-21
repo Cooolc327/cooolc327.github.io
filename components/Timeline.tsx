@@ -4,6 +4,7 @@ export function Timeline({
   items: {
     title: string;
     company: string;
+    companyUrl?: string;
     period: string;
     description?: string;
     highlights?: string[];
@@ -16,7 +17,20 @@ export function Timeline({
           <div className="absolute -left-[25px] h-3 w-3 rounded-full border-2 border-border bg-background" />
           <span className="text-xs font-medium text-accent">{item.period}</span>
           <h3 className="mt-1 font-semibold">{item.title}</h3>
-          <p className="text-sm text-muted">{item.company}</p>
+          <p className="text-sm text-muted">
+            {item.companyUrl ? (
+              <a
+                href={item.companyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent hover:underline"
+              >
+                {item.company}
+              </a>
+            ) : (
+              item.company
+            )}
+          </p>
           {item.description && (
             <p className="mt-2 text-sm leading-relaxed text-muted">
               {item.description}

@@ -2,6 +2,7 @@ export interface Profile {
   name: string;
   photo: string;
   tagline: string;
+  bio: string;
   affiliation: string;
   email: string;
   emailObfuscated: string;
@@ -28,6 +29,7 @@ export interface Profile {
   research: {
     title: string;
     company: string;
+    companyUrl?: string;
     period: string;
     description: string;
     highlights: string[];
@@ -45,9 +47,10 @@ export interface Profile {
 }
 
 export const profile: Profile = {
-  name: "YIN LICHEN",
+  name: "Edward YIN LICHEN",
   photo: "/images/profile.jpg",
-  tagline: "Computer Science undergraduate exploring robotics and embodied AI",
+  tagline: "Computer Science undergraduate researching human–robot collaboration and embodied AI",
+  bio: "I'm a Computer Science undergraduate at Nanyang Technological University and an undergraduate researcher at MARS Lab, supervised by Prof. Jianfei Yang. My current work focuses on collecting data for industry scenarios and fine-tuning π0.5 for human–robot collaboration, including safe obstacle avoidance and human-intention prediction. I also explore Code as Policy: using coding agents such as ChatGPT and Gemini to generate robot-control instructions, supported by an evolving library of skills and primitives. I enjoy turning machine-learning ideas into practical software through research, coursework, and hackathons.",
   affiliation: "Nanyang Technological University, Singapore",
   email: "YI0002EN@e.ntu.edu.sg",
   emailObfuscated: "YI0002EN [at] e.ntu.edu.sg",
@@ -60,7 +63,8 @@ export const profile: Profile = {
   news: [
     {
       date: "06/2026",
-      text: "Joined Prof. Jianfei Yang's group at NTU as an Undergraduate Research Assistant, working on vision processing for robot demonstrations.",
+      text: "Joined MARS Lab at NTU as an Undergraduate Researcher, supervised by Prof. Jianfei Yang. My research focuses on human–robot collaboration and Code as Policy.",
+      link: "https://marslab.tech/",
     },
     {
       date: "04/2026",
@@ -86,22 +90,29 @@ export const profile: Profile = {
         "URSP2100: Urban Sustainability (A-)",
       ],
     },
+    {
+      school: "Yixing Senior High School, Jiangsu",
+      degree: "High School",
+      period: "Sep 2022 – Jun 2025",
+      details: ["Top 0.1% in the Chinese Gaokao of Jiangsu Province, 2025"],
+    },
   ],
   research: [
     {
-      title: "Undergraduate Research Assistant",
-      company: "Nanyang Technological University · Supervised by Prof. Jianfei Yang",
+      title: "Undergraduate Researcher",
+      company: "MARS Lab · Nanyang Technological University · Supervised by Prof. Jianfei Yang",
+      companyUrl: "https://marslab.tech/",
       period: "Jun 2026 – Present",
-      description: "Developing perception tooling for robot-learning experiments.",
+      description: "Researching human–robot collaboration and robot control with foundation models and coding agents.",
       highlights: [
-        "Developed a SAM 2 vision-processing pipeline to extract and segment human hands and arms from robot demonstration videos.",
-        "Processed and organized robot demonstration trajectories for downstream perception and policy-learning experiments.",
+        "Collecting data for industry scenarios and fine-tuning π0.5 to support robot-arm collaboration with humans, focusing on safe obstacle avoidance and human-intention prediction.",
+        "Exploring Code as Policy with coding agents such as ChatGPT and Gemini to generate robot-control instructions, supported by an evolving library of skills and primitives to improve generalization across environments.",
       ],
     },
   ],
   honors: [
     "Silver Prize, OpenAI Track, Deep Learning Week Hackathon 2026 — selected among more than 800 participants.",
-    "Top 0.5% in the Chinese Gaokao of Jiangsu Province, 2025.",
+    "Top 0.1% in the Chinese Gaokao of Jiangsu Province, 2025.",
     "Second Prize, Chinese Physics Olympiad, Jiangsu Division, 2023.",
     "Second Prize, Chinese Chemistry Olympiad, Jiangsu Division, 2024.",
   ],

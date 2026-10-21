@@ -5,7 +5,7 @@ import { Timeline } from "@/components/Timeline";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn more about my background and education",
+  description: "Computer Science undergraduate at NTU and MARS Lab researcher working on human–robot collaboration, π0.5, and Code as Policy.",
 };
 
 export default function AboutPage() {
@@ -13,11 +13,7 @@ export default function AboutPage() {
     <div className="mx-auto max-w-2xl px-6 py-12">
       <h1 className="text-2xl font-bold">About Me</h1>
       <p className="mt-4 leading-relaxed text-muted">
-        I&apos;m a Computer Science undergraduate at Nanyang Technological University
-        interested in computer vision, robot learning, AI safety, and software engineering.
-        My current research focuses on using SAM 2 to segment human hands and arms in robot
-        demonstration videos. I enjoy turning machine-learning ideas into practical software
-        through research, coursework, and hackathons.
+        {profile.bio}
       </p>
 
       <section className="mt-12">

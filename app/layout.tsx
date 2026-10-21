@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { profile } from "@/data/profile";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,10 +12,10 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: {
-    default: "YIN LICHEN — Personal Website",
-    template: "%s | YIN LICHEN",
+    default: `${profile.name} — Personal Website`,
+    template: `%s | ${profile.name}`,
   },
-  description: "YIN LICHEN — Computer Science undergraduate at NTU exploring robotics and embodied AI.",
+  description: `${profile.name} — Computer Science undergraduate at NTU and MARS Lab researcher working on human–robot collaboration, π0.5, and Code as Policy.`,
 };
 
 export default function RootLayout({
